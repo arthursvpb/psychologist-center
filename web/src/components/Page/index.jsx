@@ -1,3 +1,5 @@
+// !TODO => DECOUPLE SIDER AND PAGE COMPONENT
+
 import './styles.scss';
 
 import { useState } from 'react';
