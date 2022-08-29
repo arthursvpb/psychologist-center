@@ -1,6 +1,7 @@
 import './styles.scss';
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Breadcrumb, Layout, Menu, Typography, Space } from 'antd';
 import { UserOutlined, CalendarOutlined, HomeOutlined, LogoutOutlined } from '@ant-design/icons';
@@ -18,9 +19,27 @@ function getItem(label, key, icon, children) {
 }
 
 const items = [
-  getItem('Dashboard', '1', <HomeOutlined />),
-  getItem('Patients', '2', <UserOutlined />),
-  getItem('Sessions', '3', <CalendarOutlined />),
+  getItem(
+    'Dashboard',
+    '1',
+    <Link to="/">
+      <HomeOutlined />
+    </Link>
+  ),
+  getItem(
+    'Patients',
+    '2',
+    <Link to="/patients">
+      <UserOutlined />
+    </Link>
+  ),
+  getItem(
+    'Sessions',
+    '3',
+    <Link to="/sessions">
+      <CalendarOutlined />
+    </Link>
+  ),
 ];
 
 export function Page({ children, sider = true }) {
