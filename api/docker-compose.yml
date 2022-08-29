@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  pc_db:
+    image: mysql
+    container_name: pc
+    environment:
+      MYSQL_ROOT_PASSWORD: docker
+      MYSQL_DATABASE: pc_db
+    ports:
+      - 3306:3306
+  pc_server:
+    build: .
+    command: npm run dev
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 8080:8080
+      - 9229:9229
+    depends_on:
+      - pc_db
