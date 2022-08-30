@@ -1,5 +1,3 @@
-// !TODO => DECOUPLE SIDER AND PAGE COMPONENT
-
 import './styles.scss';
 
 import { useState } from 'react';
@@ -10,6 +8,8 @@ import { UserOutlined, CalendarOutlined, HomeOutlined, LogoutOutlined } from '@a
 
 const { Sider, Content } = Layout;
 const { Title } = Typography;
+
+import { Sidebar } from '../Sidebar';
 
 function getItem(label, key, icon, children) {
   return {
@@ -44,7 +44,7 @@ const items = [
   ),
 ];
 
-export function Page({ children, sider = true }) {
+export function Page({ children }) {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
@@ -53,56 +53,7 @@ export function Page({ children, sider = true }) {
         minHeight: '100vh',
       }}
     >
-      {sider && (
-        <Sider
-          collapsible
-          collapsed={collapsed}
-          onCollapse={value => setCollapsed(value)}
-          className="sider"
-        >
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-            className="logo"
-          >
-            <Title
-              style={{
-                margin: '0',
-              }}
-              level={5}
-            >
-              {collapsed ? 'PC' : 'Psychologist Center'}
-            </Title>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-            className="user"
-          >
-            {collapsed ? (
-              <p>A</p>
-            ) : (
-              <>
-                <p>Welcome,</p>
-                <Space size="middle">
-                  Arthur
-                  <a className="logout">
-                    <LogoutOutlined />
-                  </a>
-                </Space>
-              </>
-            )}
-          </div>
-          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
-        </Sider>
-      )}
+      <Sidebar />
       <Layout className="site-layout">
         <Content
           style={{
