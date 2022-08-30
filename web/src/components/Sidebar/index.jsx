@@ -3,10 +3,10 @@ import './styles.scss';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Breadcrumb, Layout, Menu, Typography, Space } from 'antd';
+import { Layout, Menu, Typography, Space } from 'antd';
 import { UserOutlined, CalendarOutlined, HomeOutlined, LogoutOutlined } from '@ant-design/icons';
 
-const { Sider, Content } = Layout;
+const { Sider } = Layout;
 const { Title } = Typography;
 
 function getItem(label, key, icon, children) {
@@ -42,7 +42,7 @@ const items = [
   ),
 ];
 
-export function Sidebar({ children }) {
+export function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
 
   return (

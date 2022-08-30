@@ -1,52 +1,11 @@
 import './styles.scss';
 
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-
-import { Breadcrumb, Layout, Menu, Typography, Space } from 'antd';
-import { UserOutlined, CalendarOutlined, HomeOutlined, LogoutOutlined } from '@ant-design/icons';
-
-const { Sider, Content } = Layout;
-const { Title } = Typography;
+import { Breadcrumb, Layout } from 'antd';
+const { Content } = Layout;
 
 import { Sidebar } from '../Sidebar';
 
-function getItem(label, key, icon, children) {
-  return {
-    key,
-    icon,
-    children,
-    label,
-  };
-}
-
-const items = [
-  getItem(
-    'Dashboard',
-    '1',
-    <Link to="/">
-      <HomeOutlined />
-    </Link>
-  ),
-  getItem(
-    'Patients',
-    '2',
-    <Link to="/patients">
-      <UserOutlined />
-    </Link>
-  ),
-  getItem(
-    'Sessions',
-    '3',
-    <Link to="/sessions">
-      <CalendarOutlined />
-    </Link>
-  ),
-];
-
 export function Page({ children }) {
-  const [collapsed, setCollapsed] = useState(false);
-
   return (
     <Layout
       style={{

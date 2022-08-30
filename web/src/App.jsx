@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Page } from './components/Page';
 
 import { Dashboard } from './pages/dahsboard';
@@ -6,7 +6,7 @@ import { Login } from './pages/login';
 import { Patients } from './pages/patients';
 import { Sessions } from './pages/sessions';
 
-export const App = ({ children }) => {
+export const App = () => {
   return (
     <Page>
       <Routes>
