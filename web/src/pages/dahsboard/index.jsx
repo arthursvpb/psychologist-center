@@ -1,4 +1,4 @@
-import { Col, Row } from 'antd';
+import { Col, Divider, Row } from 'antd';
 import { Card } from '../../components/Card';
 
 export const Dashboard = () => {
@@ -6,6 +6,8 @@ export const Dashboard = () => {
     <>
       <h1>Dashboard</h1>
 
+      <Divider />
+      
       <Row gutter={[16, 16]}>
         <Col>
           <Card title="Sessions scheduled (day)" number="4" />
