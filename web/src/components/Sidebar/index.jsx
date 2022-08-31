@@ -3,7 +3,7 @@ import './styles.scss';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Layout, Menu, Typography, Space } from 'antd';
+import { Layout, Menu, Typography, Space, Avatar } from 'antd';
 import { UserOutlined, CalendarOutlined, HomeOutlined, LogoutOutlined } from '@ant-design/icons';
 
 const { Sider } = Layout;
@@ -79,7 +79,7 @@ export function Sidebar() {
         className="user"
       >
         {collapsed ? (
-          <p>A</p>
+          <Avatar style={{ backgroundColor: '#87d068' }}>A</Avatar>
         ) : (
           <>
             <p>Welcome,</p>
