@@ -1,13 +1,13 @@
 import './styles.scss';
 
-import { Button, Divider, Space, Table } from 'antd';
+import { Button, Divider, Space, Table, Tag } from 'antd';
 
 import { DeleteFilled, EditFilled, EyeFilled } from '@ant-design/icons';
 
 const columns = [
   {
     title: 'Patient',
-    width: 75,
+    width: 50,
     dataIndex: 'patient',
     key: 'patient',
     fixed: 'left',
@@ -16,26 +16,31 @@ const columns = [
     title: 'Scheduled date',
     dataIndex: 'date',
     key: '1',
-    width: 75,
+    width: 60,
   },
   {
     title: 'Status',
     dataIndex: 'status',
     key: '2',
-    width: 75,
+    width: 50,
   },
   {
     title: 'Subject',
     dataIndex: 'subject',
     key: '3',
-    width: 75,
+    width: 50,
   },
-
   {
     title: 'Duration',
     dataIndex: 'duration',
     key: '4',
-    width: 75,
+    width: 50,
+  },
+  {
+    title: 'Session type',
+    dataIndex: 'sessionType',
+    key: '4',
+    width: 50,
   },
   {
     title: 'Action',
@@ -59,14 +64,21 @@ const columns = [
 ];
 const data = [];
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 3; i++) {
+  const colors = [
+      { status: 'success', description: 'attended' },
+      { status: 'processing', description: 'scheduled'},
+      { status: 'error', description: 'canceled'},
+  ];
+
   data.push({
     key: i,
     patient: `Harry Potter ${i}`,
-    date: `4 Privet Drive ${i}`,
-    status: `harry@potter.com ${i}`,
-    subject: `Male`,
-    duration: `Little Whinging ${i}`,
+    date: `01/09/2022 - 09:00`,
+    status: <Tag color={colors[i].status}>{colors[i].description}</Tag>,
+    subject: `Anxiety ${i}`,
+    duration: `01:00`,
+    sessionType: `Couple`
   });
 }
 
