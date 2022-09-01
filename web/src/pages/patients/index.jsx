@@ -1,6 +1,8 @@
 import './styles.scss';
 
-import { Button, Divider, Space, Table } from 'antd';
+import { FormRegisterModal } from '../../components/FormRegisterModal'
+
+import { Divider, Space, Table } from 'antd';
 
 import { DeleteFilled, EditFilled, EyeFilled } from '@ant-design/icons';
 
@@ -75,7 +77,7 @@ export const Patients = () => {
     <>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <h1>My Patients</h1>
-        <Button type="primary">New Patient</Button>
+        <FormRegisterModal buttonTitle="New patient" modalTitle="New patient" />
       </div>
       <Divider />
       <Table
