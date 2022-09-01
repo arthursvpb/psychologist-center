@@ -1,0 +1,8 @@
+.ant-table-thead .ant-table-cell {
+  background-color: var(--blue-400);
+  color: var(--white);
+}
+
+.ant-table-row:nth-child(odd) .ant-table-cell {
+  background-color: var(--gray-200);
+}
