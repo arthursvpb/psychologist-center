@@ -1,8 +1,9 @@
 import './styles.scss';
 
-import { Button, Divider, Space, Table, Tag } from 'antd';
-
+import { Divider, Space, Table, Tag } from 'antd';
 import { DeleteFilled, EditFilled, EyeFilled } from '@ant-design/icons';
+
+import { FormRegisterModal } from '../../components/FormRegisterModal';
 
 const columns = [
   {
@@ -66,9 +67,9 @@ const data = [];
 
 for (let i = 0; i < 3; i++) {
   const colors = [
-      { status: 'success', description: 'attended' },
-      { status: 'processing', description: 'scheduled'},
-      { status: 'error', description: 'canceled'},
+    { status: 'success', description: 'attended' },
+    { status: 'processing', description: 'scheduled' },
+    { status: 'error', description: 'canceled' },
   ];
 
   data.push({
@@ -78,7 +79,7 @@ for (let i = 0; i < 3; i++) {
     status: <Tag color={colors[i].status}>{colors[i].description}</Tag>,
     subject: `Anxiety ${i}`,
     duration: `01:00`,
-    sessionType: `Couple`
+    sessionType: `Couple`,
   });
 }
 
@@ -87,7 +88,7 @@ export const Sessions = () => {
     <>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <h1>Sessions</h1>
-        <Button type="primary">New Session</Button>
+        <FormRegisterModal buttonTitle="New session" modalTitle="New session" formType="session" />
       </div>
       <Divider />
       <Table

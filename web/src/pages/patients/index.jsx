@@ -77,7 +77,7 @@ export const Patients = () => {
     <>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <h1>My Patients</h1>
-        <FormRegisterModal buttonTitle="New patient" modalTitle="New patient" />
+        <FormRegisterModal buttonTitle="New patient" modalTitle="New patient" formType="patient" />
       </div>
       <Divider />
       <Table
