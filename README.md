@@ -44,7 +44,7 @@ This project was built using the following technologies:
 
 ## ▶️ Running
 
-It is necessary having Git, Node 18.x and Yarn.
+It is necessary having Git, Node 18.x, Yarn, Docker and Docker Compose.
 
 1. Clone this project
 
