@@ -4,7 +4,11 @@ export const FormRegisterSession = () => {
   return (
     <>
       <Form.Item>
-        <Input placeholder="Full Name" />
+        <Select placeholder="Patient">
+          <Select.Option value="patient1">Patient1</Select.Option>
+          <Select.Option value="patient2">Patient2</Select.Option>
+          <Select.Option value="patient3">Patient3</Select.Option>
+        </Select>
       </Form.Item>
       <Form.Item>
         <div style={{ display: 'flex', gap: '10px' }}>

@@ -5,36 +5,38 @@ const { Content } = Layout;
 
 import { Sidebar } from '../Sidebar';
 
-export function Page({ children }) {
+export function Page({ children, user }) {
   return (
-    <Layout
-      style={{
-        minHeight: '100vh',
-      }}
-    >
-      <Sidebar />
-      <Layout className="site-layout">
-        <Content
-          style={{
-            margin: '0 16px',
-          }}
-        >
-          <Breadcrumb
+    <>
+      <Layout
+        style={{
+          minHeight: '100vh',
+        }}
+      >
+        {user && <Sidebar />}
+        <Layout className="site-layout">
+          <Content
             style={{
-              margin: '16px 0',
-            }}
-          />
-          <div
-            className="site-layout-background"
-            style={{
-              padding: 24,
-              minHeight: 360,
+              margin: '0 16px',
             }}
           >
-            {children}
-          </div>
-        </Content>
+            <Breadcrumb
+              style={{
+                margin: '16px 0',
+              }}
+            />
+            <div
+              className="site-layout-background"
+              style={{
+                padding: 24,
+                minHeight: 360,
+              }}
+            >
+              {children}
+            </div>
+          </Content>
+        </Layout>
       </Layout>
-    </Layout>
+    </>
   );
 }
