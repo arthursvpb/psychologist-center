@@ -1,5 +1,5 @@
 import { FormRegister } from "../../components/FormRegister";
 
-export const Signup = () => {
+export const Auth = () => {
   return <FormRegister formType="auth" />;
 };
