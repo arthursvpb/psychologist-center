@@ -15,9 +15,8 @@ export const App = () => {
   return (
     <Page user={user}>
       <Routes>
-        <Route exact path="/auth" element={<Auth />} />
-
         <Route exact path="/" element={<Dashboard />} />
+        <Route exact path="/auth" element={<Auth />} />
         <Route exact path="/patients" element={<Patients />} />
         <Route exact path="/sessions" element={<Sessions />} />
         <Route path="*" element={<Navigate to="/" />} />
