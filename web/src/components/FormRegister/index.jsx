@@ -2,13 +2,13 @@ import { Form } from 'antd';
 
 import { FormRegisterPatient } from '../FormRegisterPatient';
 import { FormRegisterSession } from '../FormRegisterSession';
+import { FormRegisterAuth } from '../FormRegisterAuth';
 
 export const FormRegister = ({ formType }) => {
   const formTypes = {
     patient: <FormRegisterPatient />,
     session: <FormRegisterSession />,
-    login: '',
-    signup: '',
+    auth: <FormRegisterAuth />,
   };
 
   return (
