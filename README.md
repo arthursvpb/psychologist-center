@@ -57,15 +57,15 @@ git clone https://github.com/arthursvpb/psychologist-center.git
 2. Start the back-end in `api/` folder using the command:
 
 ```sh
-yarn # install all dependencies
-yarn dev # start application
+npm i # install all dependencies
+docker-compose up # start server and database instance
 ```
 
 3. Start the front-end in `web/` folder using the command:
 
 ```sh
-npm i # install all dependencies
-docker-compose up # start server and database instance
+yarn # install all dependencies
+yarn dev # start application
 ```
 
 4. Server is running on `http://localhost:5173/`
