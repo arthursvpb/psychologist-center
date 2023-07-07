@@ -3,14 +3,20 @@
   "version": "1.0.0",
   "main": "server.ts",
   "license": "MIT",
+  "engines": {
+    "node": ">=18.16.0",
+    "npm": ">=9.5.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules --inspect -- ./src/server.ts",
+    "dev:docker": "docker compose up",
     "db:new:migration": "sequelize migration:generate --name"
   },
   "dependencies": {
     "express": "^4.18.1",
+    "mysql2": "^3.5.0",
     "sequelize": "^6.21.4",
     "sequelize-typescript": "^2.1.5"
   },

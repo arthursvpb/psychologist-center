@@ -5,7 +5,6 @@ import {
   CreatedAt,
   UpdatedAt,
   DataType,
-  Unique,
 } from 'sequelize-typescript';
 
 export interface IUser {
@@ -19,17 +18,16 @@ export interface IUser {
 
 @Table
 export default class User extends Model {
-  @Column({ primaryKey: true, allowNull: false })
+  @Column({ primaryKey: true, allowNull: false, type: DataType.STRING })
   id: string;
 
-  @Column(DataType.TEXT)
+  @Column({ allowNull: false, type: DataType.STRING })
   name: string;
 
-  @Unique
-  @Column(DataType.TEXT)
+  @Column({ allowNull: false, type: DataType.STRING })
   email: string;
 
-  @Column(DataType.UUIDV4)
+  @Column({ allowNull: false, type: DataType.STRING })
   password: string;
 
   @CreatedAt
