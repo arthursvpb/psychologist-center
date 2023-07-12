@@ -1,16 +1,11 @@
 import express from 'express';
+import 'express-async-errors';
 
 import { sequelize } from './database/connection';
 
 const app = express();
 
-(async () => {
-  try {
-    await sequelize.authenticate();
-  } catch (error) {
-    console.error(error);
-  }
-})();
+sequelize.authenticate({ logging: query => console.info(`▶️: ${query}`) });
 
 app.get('/', (_, res) => res.send('Hello World!'));
 
