@@ -1,10 +1,8 @@
 import { Sequelize } from 'sequelize-typescript';
 
+import config from '../config/sequelize.cjs';
+
 export const sequelize = new Sequelize({
+  ...config,
   host: 'pc_db',
-  database: 'pc_db',
-  dialect: 'mysql',
-  username: 'root',
-  password: 'docker',
-  models: [`${__dirname}/../models/**/*.ts`],
 });
