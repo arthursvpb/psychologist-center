@@ -18,7 +18,7 @@ export interface IUser {
 
 @Table
 export default class User extends Model {
-  @Column({ primaryKey: true, allowNull: false, type: DataType.STRING })
+  @Column({ primaryKey: true, type: DataType.STRING })
   id: string;
 
   @Column({ allowNull: false, type: DataType.STRING })
@@ -27,7 +27,7 @@ export default class User extends Model {
   @Column({ allowNull: false, type: DataType.STRING })
   email: string;
 
-  @Column({ allowNull: false, type: DataType.STRING })
+  @Column({ allowNull: false, type: DataType.UUIDV4 })
   password: string;
 
   @CreatedAt
